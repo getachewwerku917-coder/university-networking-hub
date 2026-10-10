@@ -1,0 +1,112 @@
+/* ==========================================================================
+   CampusLink - Events Styles
+   ========================================================================== */
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+.event-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand-primary);
+}
+
+.event-banner {
+  height: 120px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+}
+
+.event-date-badge {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.event-date-month {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--danger);
+  line-height: 1;
+}
+
+.event-date-day {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.event-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.event-title {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.event-organizer {
+  font-size: var(--font-size-xs);
+  color: var(--brand-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.event-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-desc {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+  flex: 1;
+}
+
+.event-footer {
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}

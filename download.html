@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download CampusLink Project (.ZIP)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --brand: #2563eb;
+      --brand-hover: #1d4ed8;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background-color: rgba(37, 99, 235, 0.15);
+      color: #60a5fa;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .file-stats {
+      background-color: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .stat-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 24px;
+      background-color: var(--brand);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: var(--brand-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    }
+    .status-box {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--success);
+      font-weight: 600;
+      min-height: 24px;
+    }
+    .powershell-box {
+      margin-top: 24px;
+      padding: 16px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-align: left;
+    }
+    .powershell-box code {
+      font-family: monospace;
+      font-size: 12px;
+      color: #38bdf8;
+      display: block;
+      word-break: break-all;
+      user-select: all;
+    }
+    .powershell-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">📦 Downloadable ZIP Package</div>
+    <h1>CampusLink Complete Project</h1>
+    <p>Download the entire source code archive including all HTML, CSS, JavaScript modules, Firestore rules, and configuration files.</p>
+
+    <div class="file-stats">
+      <div>
+        <div class="stat-val">35+</div>
+        <div class="stat-label">Project Files</div>
+      </div>
+      <div>
+        <div class="stat-val">100%</div>
+        <div class="stat-label">Pure Vanilla JS</div>
+      </div>
+      <div>
+        <div class="stat-val">Dual-Mode</div>
+        <div class="stat-label">Firebase + Local</div>
+      </div>
+    </div>
+
+    <button id="btn-download" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download campuslink.zip
+    </button>
+
+    <div id="status" class="status-box"></div>
+
+    <div class="powershell-box">
+      <div class="powershell-title">Alternative: Windows PowerShell One-Liner</div>
+      <code>Compress-Archive -Path "C:\Users\user\.gemini\antigravity\scratch\campuslink\*" -DestinationPath "$HOME\Downloads\campuslink.zip" -Force</code>
+    </div>
+  </div>
+
+  <script>
+    // CRC-32 Lookup Table
+    const makeCrcTable = () => {
+      let c;
+      const crcTable = [];
+      for (let n = 0; n < 256; n++) {
+        c = n;
+        for (let k = 0; k < 8; k++) {
+          c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+        }
+        crcTable[n] = c;
+      }
+      return crcTable;
+    };
+    const crcTable = makeCrcTable();
+
+    function crc32(buf) {
+      let crc = 0 ^ (-1);
+      for (let i = 0; i < buf.length; i++) {
+        crc = (crc >>> 8) ^ crcTable[(crc ^ buf[i]) & 0xFF];
+      }
+      return (crc ^ (-1)) >>> 0;
+    }
+
+    function createZip(files) {
+      const encoder = new TextEncoder();
+      const fileEntries = [];
+      let offset = 0;
+
+      for (const f of files) {
+        const data = encoder.encode(f.content);
+        const pathBytes = encoder.encode(f.path);
+        const crc = crc32(data);
+        const size = data.length;
+
+        // Local header: 30 bytes + name length + data
+        const localHeader = new Uint8Array(30 + pathBytes.length + size);
+        const view = new DataView(localHeader.buffer);
+
+        view.setUint32(0, 0x04034b50, true); // signature
+        view.setUint16(4, 20, true);         // version needed
+        view.setUint16(6, 0, true);          // flags
+        view.setUint16(8, 0, true);          // compression 0 (STORE)
+        view.setUint16(10, 0x5460, true);    // dos time (10:35)
+        view.setUint16(12, 0x5d48, true);    // dos date (2026-10-08)
+        view.setUint32(14, crc, true);
+        view.setUint32(18, size, true);
+        view.setUint32(22, size, true);
+        view.setUint16(26, pathBytes.length, true);
+        view.setUint16(28, 0, true);
+
+        localHeader.set(pathBytes, 30);
+        localHeader.set(data, 30 + pathBytes.length);
+
+        fileEntries.push({
+          pathBytes,
+          crc,
+          size,
+          offset,
+          localHeader
+        });
+
+        offset += localHeader.length;
+      }
+
+      // Central Directory
+      let centralDirSize = 0;
+      for (const entry of fileEntries) {
+        centralDirSize += 46 + entry.pathBytes.length;
+      }
+
+      const centralDir = new Uint8Array(centralDirSize);
+      const cdView = new DataView(centralDir.buffer);
+      let cdOffset = 0;
+
+      for (const entry of fileEntries) {
+        cdView.setUint32(cdOffset + 0, 0x02014b50, true);
+        cdView.setUint16(cdOffset + 4, 20, true);
+        cdView.setUint16(cdOffset + 6, 20, true);
+        cdView.setUint16(cdOffset + 8, 0, true);
+        cdView.setUint16(cdOffset + 10, 0, true);
+        cdView.setUint16(cdOffset + 12, 0x5460, true);
+        cdView.setUint16(cdOffset + 14, 0x5d48, true);
+        cdView.setUint32(cdOffset + 16, entry.crc, true);
+        cdView.setUint32(cdOffset + 20, entry.size, true);
+        cdView.setUint32(cdOffset + 24, entry.size, true);
+        cdView.setUint16(cdOffset + 28, entry.pathBytes.length, true);
+        cdView.setUint16(cdOffset + 30, 0, true);
+        cdView.setUint16(cdOffset + 32, 0, true);
+        cdView.setUint16(cdOffset + 34, 0, true);
+        cdView.setUint16(cdOffset + 36, 0, true);
+        cdView.setUint32(cdOffset + 38, 0, true);
+        cdView.setUint32(cdOffset + 42, entry.offset, true);
+
+        centralDir.set(entry.pathBytes, cdOffset + 46);
+        cdOffset += 46 + entry.pathBytes.length;
+      }
+
+      // End of central directory record
+      const eocd = new Uint8Array(22);
+      const eocdView = new DataView(eocd.buffer);
+      eocdView.setUint32(0, 0x06054b50, true);
+      eocdView.setUint16(4, 0, true);
+      eocdView.setUint16(6, 0, true);
+      eocdView.setUint16(8, fileEntries.length, true);
+      eocdView.setUint16(10, fileEntries.length, true);
+      eocdView.setUint32(12, centralDirSize, true);
+      eocdView.setUint32(16, offset, true);
+      eocdView.setUint16(20, 0, true);
+
+      // Final bytes
+      const totalLength = offset + centralDirSize + 22;
+      const zipBytes = new Uint8Array(totalLength);
+      let pos = 0;
+      for (const entry of fileEntries) {
+        zipBytes.set(entry.localHeader, pos);
+        pos += entry.localHeader.length;
+      }
+      zipBytes.set(centralDir, pos);
+      pos += centralDir.length;
+      zipBytes.set(eocd, pos);
+
+      return new Blob([zipBytes], { type: "application/zip" });
+    }
+
+    // Load file list dynamically or from cache
+    async function getProjectFiles() {
+      const filesToFetch = [
+        "index.html",
+        "404.html",
+        "firebase.json",
+        "firestore.rules",
+        "firestore.indexes.json",
+        "README.md",
+        "css/main.css",
+        "css/components.css",
+        "css/layout.css",
+        "css/landing.css",
+        "css/feed.css",
+        "css/profile.css",
+        "css/opportunities.css",
+        "css/circles.css",
+        "css/events.css",
+        "css/research.css",
+        "css/messaging.css",
+        "css/admin.css",
+        "css/notifications.css",
+        "js/app.js",
+        "js/config/firebase-config.js",
+        "js/models/demo-data.js",
+        "js/state/app-state.js",
+        "js/services/auth-service.js",
+        "js/services/db-service.js",
+        "js/services/storage-service.js",
+        "js/components/navbar.js",
+        "js/components/sidebar.js",
+        "js/components/bottom-nav.js",
+        "js/components/post-card.js",
+        "js/components/opportunity-card.js",
+        "js/components/circle-card.js",
+        "js/components/event-card.js",
+        "js/components/research-card.js",
+        "js/components/modal.js",
+        "js/pages/landing.js",
+        "js/pages/feed.js",
+        "js/pages/profile.js",
+        "js/pages/opportunities.js",
+        "js/pages/circles.js",
+        "js/pages/events.js",
+        "js/pages/research.js",
+        "js/pages/messaging.js",
+        "js/pages/network.js",
+        "js/pages/notifications-page.js",
+        "js/pages/admin.js",
+        "js/pages/search-page.js",
+        "js/utils/helpers.js",
+        "js/utils/router.js"
+      ];
+
+      const loadedFiles = [];
+      for (const path of filesToFetch) {
+        try {
+          const res = await fetch(path);
+          if (res.ok) {
+            const content = await res.text();
+            loadedFiles.push({ path, content });
+          }
+        } catch (e) {
+          console.warn("Could not fetch " + path + ", skipping", e);
+        }
+      }
+      return loadedFiles;
+    }
+
+    async function triggerDownload() {
+      const statusEl = document.getElementById("status");
+      statusEl.textContent = "Packaging project into ZIP archive...";
+
+      try {
+        const files = await getProjectFiles();
+        if (files.length === 0) {
+          statusEl.textContent = "Please serve via local web server (e.g. python -m http.server) or use the PowerShell command below.";
+          return;
+        }
+
+        const zipBlob = createZip(files);
+        const url = URL.createObjectURL(zipBlob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "campuslink.zip";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        statusEl.textContent = "✅ campuslink.zip downloaded successfully!";
+      } catch (err) {
+        statusEl.textContent = "Error packaging: " + err.message;
+      }
+    }
+
+    document.getElementById("btn-download").addEventListener("click", triggerDownload);
+
+    // Auto trigger if accessed via HTTP
+    if (window.location.protocol.startsWith("http")) {
+      setTimeout(triggerDownload, 600);
+    }
+  </script>
+</body>
+</html>

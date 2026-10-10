@@ -1,0 +1,208 @@
+/* ==========================================================================
+   CampusLink - Messaging Styles
+   ========================================================================== */
+
+.messaging-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: calc(100vh - var(--nav-height) - 4rem);
+  min-height: 550px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Left: Conversations List */
+.conversations-panel {
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.conversations-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.conversations-header h3 {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-3);
+}
+
+.conversations-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color var(--transition-fast);
+}
+
+.conversation-item:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+.conversation-item.active {
+  background-color: var(--brand-primary-light);
+  border-left: 3px solid var(--brand-primary);
+}
+
+.conversation-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.conversation-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.conversation-name {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.conversation-time {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.conversation-last-msg {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-unread-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+/* Right: Active Chat Area */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+}
+
+.chat-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-partner-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.chat-partner-name {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.chat-partner-status {
+  font-size: 11px;
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background-color: var(--bg-surface);
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  line-height: 1.45;
+  position: relative;
+  word-break: break-word;
+}
+
+.message-in {
+  align-self: flex-start;
+  background-color: var(--bg-surface-hover);
+  color: var(--text-primary);
+  border-bottom-left-radius: 4px;
+}
+
+.message-out {
+  align-self: flex-end;
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.message-timestamp {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.chat-input-bar {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: var(--bg-surface);
+}
+
+.chat-input {
+  flex: 1;
+  background-color: var(--bg-surface-hover);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 0.65rem 1.2rem;
+  font-size: var(--font-size-sm);
+  outline: none;
+}
+
+.chat-input:focus {
+  border-color: var(--border-focus);
+}
+
+@media (max-width: 768px) {
+  .messaging-container {
+    grid-template-columns: 1fr;
+    height: calc(100vh - 140px);
+  }
+  .conversations-panel.hidden-mobile {
+    display: none;
+  }
+  .chat-panel.hidden-mobile {
+    display: none;
+  }
+}
